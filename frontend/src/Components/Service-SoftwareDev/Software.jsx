@@ -45,17 +45,20 @@ function Software() {
         <ScrollReveal className="w-full lg:w-1/2">
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <div className="bg-gray-100 p-6 rounded-2xl shadow-md flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <img
-                src={img2.src}
+              <Image
+                src={img2}
                 alt="Enterprise Solution 1"
                 className="w-48 lg:w-64 h-auto object-contain"
               />
             </div>
 
             <div className="bg-gray-100 p-6 rounded-2xl shadow-md flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <img
+              {/* External image: Added width and height mapping to lg:w-64 */}
+              <Image
                 src="https://cdn-icons-png.flaticon.com/512/4149/4149648.png"
                 alt="Enterprise Solution 2"
+                width={256}
+                height={256}
                 className="w-48 lg:w-64 h-auto object-contain"
               />
             </div>

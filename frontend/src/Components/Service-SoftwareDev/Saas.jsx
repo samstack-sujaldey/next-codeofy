@@ -4,7 +4,7 @@ function Saas() {
   return (
     <section
       id="saas"
-      className="scroll-mt-24 w-full py-16 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 flex items-center justify-center"
+      className="scroll-mt-24 -mt-px w-full py-16 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 flex items-center justify-center"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center relative">
         <ScrollReveal direction="up">

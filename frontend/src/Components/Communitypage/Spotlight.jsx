@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import ScrollReveal from "../ScrollReveal";
 import Image from "next/image";
+
 function Spotlight() {
   const members = [
     {
@@ -34,7 +35,7 @@ function Spotlight() {
   ];
 
   return (
-    <section className="py-15 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <section className="-mt-px py-15 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-black dark:text-white">
@@ -51,9 +52,11 @@ function Spotlight() {
               <div
                 className={`w-24 h-24 rounded-full border-4 ${member.color} p-1 relative`}
               >
-                <img
+                <Image
                   src={member.img}
                   alt={member.name}
+                  width={96}
+                  height={96}
                   className="w-full h-full object-cover rounded-full"
                 />
                 <div className="absolute bottom-0 right-0 bg-white dark:bg-gray-800 rounded-full p-1 shadow">
@@ -75,4 +78,5 @@ function Spotlight() {
     </section>
   );
 }
+
 export default Spotlight;

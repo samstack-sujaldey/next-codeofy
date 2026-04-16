@@ -8,7 +8,7 @@ function Policy() {
   return (
     <section
       id="qa"
-      className="scroll-mt-24 w-full flex justify-center items-center py-16 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+      className="-mt-px scroll-mt-24 w-full flex justify-center items-center py-16 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
     >
       <ScrollReveal direction="up" duration={0.8}>
         <div className="relative max-w-5xl w-full bg-[#1a1f2c] rounded-[2.5rem] text-center px-6 py-16 md:p-20 shadow-2xl mt-8">

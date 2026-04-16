@@ -2,7 +2,7 @@ import ScrollReveal from "../ScrollReveal";
 
 function Blogbtn() {
   return (
-    <div className="p-6 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <div className="-mt-px p-6 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.8}>
         <h2 className="text-sm font-bold text-black dark:text-white md:text-5xl text-center">
           Browse by Category

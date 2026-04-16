@@ -77,7 +77,7 @@ export default function FeatureGrid({
 
   return (
     <section
-      className={`py-20 px-4 transition-colors duration-300 ${dark ? "bg-gray-900" : "bg-white dark:bg-gray-900"} ${className}`}
+      className={`-mt-px py-20 px-4 transition-colors duration-300 ${dark ? "bg-gray-900" : "bg-white dark:bg-gray-900"} ${className}`}
     >
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-7xl mx-auto">

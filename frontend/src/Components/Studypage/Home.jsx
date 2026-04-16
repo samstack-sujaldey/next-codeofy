@@ -5,7 +5,7 @@ function Home() {
   return (
     <section className="text-white bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <ScrollReveal direction="down" duration={0.8}>
-        <div className="max-w-8xl  flex flex-wrap gap-10 justify-center py-8 px-6">
+        <div className="max-w-8xl flex flex-wrap gap-10 justify-center py-8 px-6">
           <div className="max-w-3xl mb-15 text-center md:text-left">
             <span className="px-4 py-1 text-sm bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 rounded-full">
               FINTECH SUCCESS STORY{" "}
@@ -30,10 +30,12 @@ function Home() {
           </div>
 
           <div className="flex gap-6 mb-6">
-            <img
+            <Image
               src="https://t3.ftcdn.net/jpg/01/90/90/44/360_F_190904438_oYHiq39wdWbUKmpxTC5FRxGCBFIFAwrp.jpg"
               alt="analytics"
-              className="rounded-xl shadow-lg"
+              width={500}
+              height={300}
+              className="rounded-xl shadow-lg w-full h-auto object-cover"
             />
           </div>
         </div>
@@ -41,4 +43,5 @@ function Home() {
     </section>
   );
 }
+
 export default Home;

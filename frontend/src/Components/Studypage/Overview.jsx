@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Overview() {
   return (
-    <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 py-16 transition-colors duration-300">
+    <section className="-mt-px w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal direction="up" duration={0.8}>
           <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -58,9 +58,11 @@ function Overview() {
               </p>
 
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img
+                <Image
                   src="https://infraon.io/blog/wp-content/uploads/2023/06/futuristic-smart-city-with-5g-global-network-technology-min.jpg"
                   alt="challenge"
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>

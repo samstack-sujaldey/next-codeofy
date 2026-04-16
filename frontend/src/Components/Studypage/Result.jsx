@@ -2,7 +2,7 @@ import ScrollReveal from "../ScrollReveal";
 
 function Result() {
   return (
-    <section className="py-3 px-2 bg-linear-to-b from-blue-400/70 to-blue-600 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <section className="-mt-px py-3 px-2 bg-linear-to-b from-blue-400/70 to-blue-600 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.3}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center mt-18 mb-18">
           <div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 function Homecard() {
   const card = [
     {
@@ -40,9 +41,11 @@ function Homecard() {
           key={index}
           className="w-full sm:w-80 bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-colors duration-300"
         >
-          <img
+          <Image
             src={item.image}
             alt={item.title}
+            width={400}
+            height={200}
             className="w-full h-48 object-cover"
           />
 
@@ -75,4 +78,5 @@ function Homecard() {
     </div>
   );
 }
+
 export default Homecard;

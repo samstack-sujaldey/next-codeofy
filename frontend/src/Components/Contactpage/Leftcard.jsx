@@ -51,7 +51,7 @@ function Leftcard() {
   return (
     <div>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="w-full py-12 px-5 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+      <div className="-mt-px w-full py-12 px-5 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <ScrollReveal direction="left" duration={0.8}>
             <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 mt-7 transition-colors duration-300">

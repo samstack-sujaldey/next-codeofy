@@ -7,9 +7,9 @@ import ScrollReveal from "@/Components/ScrollReveal";
 // ─── HERO VISUAL ─────────────────────────────────────────────────────────────
 function BrowserMockup() {
   return (
-    <div className="rounded-2xl overflow-hidden shadow-2xl aspect-4/3 bg-linear-to-br from-teal-800 via-teal-900 to-gray-900 flex items-center justify-center relative">
+    <div className="rounded-2xl overflow-hidden shadow-2xl aspect-4/3 bg-linear-to-br from-teal-800 via-teal-900 to-gray-900 flex items-center justify-center relative w-full max-w-2xl mx-auto">
       <div className="absolute top-6 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-teal-400/80 shadow-2xl shadow-teal-300/50 blur-sm" />
-      <div className="relative z-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 w-36 shadow-xl">
+      <div className="relative z-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 w-32 sm:w-36 shadow-xl">
         <div className="flex gap-1.5 mb-3">
           <div className="w-2 h-2 rounded-full bg-red-400" />
           <div className="w-2 h-2 rounded-full bg-yellow-400" />
@@ -33,7 +33,7 @@ function BrowserMockup() {
 // ─── TABLET MOCKUP ───────────────────────────────────────────────────────────
 function TabletMockup() {
   return (
-    <div className="w-64 sm:w-72 mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors duration-300">
+    <div className="w-full max-w-65 sm:max-w-75 mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors duration-300">
       <div className="bg-gray-100 dark:bg-gray-900 px-4 py-2 flex items-center justify-between border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
         <div className="flex gap-1.5">
           <div className="w-2 h-2 rounded-full bg-red-400" />
@@ -59,7 +59,7 @@ function TabletMockup() {
             </div>
           ))}
         </div>
-        <div className="flex gap-2 pt-1">
+        <div className="flex gap-1 sm:gap-2 pt-1">
           {[
             { v: "3", l: "Cart" },
             { v: "✓", l: "Paid" },
@@ -86,13 +86,13 @@ function TabletMockup() {
 // ─── PHONE MOCKUP ────────────────────────────────────────────────────────────
 function PhoneMockup() {
   return (
-    <div className="w-40 sm:w-48 mx-auto relative group perspective">
-      <div className="bg-gray-950 rounded-[2.5rem] border-4 border-gray-800 shadow-2xl overflow-hidden aspect-9/19 flex flex-col transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-y-6">
+    <div className="w-full max-w-40 sm:max-w-50 mx-auto relative group perspective">
+      <div className="bg-gray-950 rounded-[2.5rem] border-4 border-gray-800 shadow-2xl overflow-hidden aspect-9/19 flex flex-col transition-transform duration-500 group-hover:-translate-y-2 lg:group-hover:rotate-y-6">
         <div className="flex justify-center pt-2 pb-1 relative z-20 bg-gray-950">
-          <div className="w-16 h-4 bg-gray-800 rounded-full" />
+          <div className="w-16 h-3 sm:h-4 bg-gray-800 rounded-full" />
         </div>
         <div className="flex-1 bg-linear-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center gap-4 px-4 transition-colors duration-300">
-          <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-black text-sm shadow-sm transition-colors duration-300">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-black text-xs sm:text-sm shadow-sm transition-colors duration-300">
             PWA
           </div>
           <div className="space-y-2 w-full">
@@ -104,13 +104,13 @@ function PhoneMockup() {
             {[...Array(3)].map((_, i) => (
               <div
                 key={i}
-                className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-gray-700 border border-blue-100 dark:border-gray-600 transition-colors duration-300"
+                className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-blue-50 dark:bg-gray-700 border border-blue-100 dark:border-gray-600 transition-colors duration-300"
               />
             ))}
           </div>
         </div>
         <div className="flex justify-center py-2 bg-gray-950 relative z-20">
-          <div className="w-24 h-1 bg-gray-700 rounded-full" />
+          <div className="w-20 sm:w-24 h-1 bg-gray-700 rounded-full" />
         </div>
       </div>
     </div>
@@ -135,11 +135,11 @@ const cmsFeatures = [
 
 function Ecommerce() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <section className="-mt-px py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
         <ScrollReveal direction="up" duration={0.8}>
           <div className="flex justify-center order-2 md:order-1">
-            <div className="relative">
+            <div className="relative w-full max-w-sm">
               <div className="absolute inset-0 bg-blue-200/50 dark:bg-blue-900/30 rounded-3xl blur-3xl scale-90 pointer-events-none transition-colors duration-300" />
               <div className="relative">
                 <TabletMockup />
@@ -150,13 +150,13 @@ function Ecommerce() {
 
         <ScrollReveal direction="left" duration={0.8}>
           <div className="order-1 md:order-2">
-            <p className="text-blue-500 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-2 transition-colors duration-300">
+            <p className="text-blue-500 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-2 transition-colors duration-300 text-center md:text-left">
               E-Commerce & CMS
             </p>
-            <h2 className="text-3xl font-black text-gray-900 dark:text-white leading-tight mb-4 transition-colors duration-300">
+            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 dark:text-white leading-tight mb-4 transition-colors duration-300 text-center md:text-left">
               Scalable Online Retail &amp; Content
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 transition-colors duration-300">
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 transition-colors duration-300 text-center md:text-left">
               We build conversion-focused shopping experiences and flexible
               content systems that empower your team.
             </p>
@@ -206,39 +206,39 @@ const pwaFeatures = [
 
 function PWASection() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden transition-colors duration-300 w-full">
+    <section className="-mt-px py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden transition-colors duration-300 w-full">
       <ScrollReveal direction="up" duration={0.8}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center relative z-10">
-          <div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center relative z-10">
+          <div className="order-2 md:order-1 text-center md:text-left">
             <p className="text-blue-500 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-3 transition-colors duration-300">
               Next-Gen Apps
             </p>
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white leading-tight mb-5 transition-colors duration-300">
+            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 dark:text-white leading-tight mb-5 transition-colors duration-300">
               Progressive Web Apps (PWA)
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-md transition-colors duration-300">
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-md mx-auto md:mx-0 transition-colors duration-300">
               Bridge the gap between web and mobile. We develop high-performance
               PWAs that work offline, send push notifications, and can be
               installed on any device without an app store.
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {pwaFeatures.map((f) => (
                 <div
                   key={f.label}
-                  className="flex items-center gap-3 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-500/50 hover:shadow-md dark:hover:shadow-[0_4px_20px_rgb(59,130,246,0.1)]"
+                  className="flex items-center justify-center md:justify-start gap-3 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-500/50 hover:shadow-md dark:hover:shadow-[0_4px_20px_rgb(59,130,246,0.1)]"
                 >
-                  <span className="text-lg bg-white dark:bg-gray-900 w-8 h-8 rounded-lg flex items-center justify-center shadow-sm border border-gray-100 dark:border-gray-700">
+                  <span className="text-lg bg-white dark:bg-gray-900 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 shadow-sm border border-gray-100 dark:border-gray-700">
                     {f.icon}
                   </span>
-                  <span className="text-gray-900 dark:text-white text-xs font-semibold">
+                  <span className="text-gray-900 dark:text-white text-xs font-semibold text-left">
                     {f.label}
                   </span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="relative">
+          <div className="flex justify-center order-1 md:order-2">
+            <div className="relative w-full max-w-50">
               <div className="absolute inset-0 bg-blue-100 dark:bg-blue-900/30 rounded-full blur-3xl scale-x-125 scale-y-90 pointer-events-none transition-colors duration-300" />
               <PhoneMockup />
             </div>
@@ -295,15 +295,16 @@ export default function WebDevPage() {
         items={stackItems}
         columns={4}
         headerAlign="left"
-        className="bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 py-20"
+        className="bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 py-12 md:py-20"
       />
 
       <Ecommerce />
       <PWASection />
 
-      <section className="w-full bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      <section className="-mt-px w-full bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
         <CTASection
           variant="light"
+          bgClassName="bg-transparent"
           heading="Ready to start your digital transformation?"
           description="Our team is ready to discuss your project requirements and provide a custom-tailored solution for your business."
           primaryCTA={{ label: "Get a Custom Quote" }}

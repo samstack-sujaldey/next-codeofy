@@ -58,7 +58,7 @@ const approaches = [
 
 function SolutionApproach() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
+    <section className="-mt-px py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <ScrollReveal direction="right" duration={0.8}>
           <div>
@@ -139,7 +139,7 @@ const techCategories = [
 
 function Technologies() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 w-full">
+    <section className="-mt-px py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 w-full">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-7xl mx-auto">
           <SectionHeader
@@ -292,6 +292,7 @@ export default function AIAutomation() {
       <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <CTASection
           variant="light"
+          bgClassName="bg-transparent"
           heading="Ready to automate your business?"
           description="Partner with Codeofy to build the intelligent infrastructure of tomorrow. Let's start with a free technical audit."
           primaryCTA={{ label: "Contact an Expert" }}

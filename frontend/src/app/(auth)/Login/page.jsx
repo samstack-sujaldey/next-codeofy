@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Eye } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Image from "next/image"; // <-- Added Next.js Image import
 import img from "@/assets/img.webp";
 import { useAuth } from "@/app/context/AuthContext";
 
@@ -148,8 +149,10 @@ function Login() {
                   type="button"
                   className="w-1/2 border border-gray-300 dark:border-gray-700 dark:text-gray-200 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300"
                 >
-                  <img
+                  <Image
                     src={item.logo}
+                    width={20}
+                    height={20}
                     className="w-5 h-5"
                     alt={`${item.text} logo`}
                   />

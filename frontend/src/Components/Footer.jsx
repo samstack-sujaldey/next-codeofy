@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Sun, Moon } from "lucide-react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image"; // <-- Added Next.js Image import
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 import logo from "@/assets/codeofylogo.png";
@@ -16,9 +17,15 @@ function Footer() {
       <footer className="bg-gray-100 dark:bg-gray-950 text-gray-700 dark:text-gray-400 pt-12 pb-3 px-3 transition-colors duration-300 border-t">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 relative flex items-center justify-center overflow-hidden shrink-0">
-                <img src={logo.src} alt="Codeofy Logo" className="object-contain" />
+            <div className="flex items-center mb-4 -ml-2">
+              <div className="w-12 h-12 relative overflow-hidden shrink-0">
+                <Image
+                  src={logo}
+                  alt="Codeofy Logo"
+                  height={144}
+                  width={144}
+                  className="object-contain mt-3 scale-[2.5]"
+                />
               </div>
               <h2 className="text-2xl font-bold text-black dark:text-white">
                 Codeofy

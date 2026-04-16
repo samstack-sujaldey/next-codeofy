@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import { CiMobile3, CiCloudOn } from "react-icons/ci";
 import { LuBrainCircuit } from "react-icons/lu";
@@ -67,7 +68,7 @@ const expertiseCards = [
 
 function Expertise() {
   return (
-    <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 py-16 md:py-28">
+    <section className="-mt-px w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 py-16 md:py-28">
       <ScrollReveal direction="up" duration="0.8">
         <div className="px-6 lg:px-12 flex flex-col items-center gap-12 max-w-7xl mx-auto">
           <div className="flex flex-col items-center gap-2 md:gap-5">
@@ -138,7 +139,7 @@ const whyFeatures = [
 
 function WhyChoose() {
   return (
-    <section className="w-full bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 md:py-28">
+    <section className="-mt-px w-full bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 md:py-28">
       <ScrollReveal direction="up" duration="0.8">
         <div className="px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 max-w-7xl mx-auto">
           <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start lg:flex-1">
@@ -234,7 +235,7 @@ const processData = [
 
 function Process() {
   return (
-    <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 py-16 md:py-28">
+    <section className="-mt-px w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 py-16 md:py-28">
       <ScrollReveal direction="up" duration="0.8">
         <div className="px-6 lg:px-12 max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -282,7 +283,7 @@ function TechStack() {
   ];
   const repeated = [...technologies, ...technologies, ...technologies];
   return (
-    <section className="w-full bg-white dark:bg-gray-900 overflow-hidden py-16 md:py-28 flex flex-col gap-y-10 transition-colors duration-300">
+    <section className="-mt-px w-full bg-white dark:bg-gray-900 overflow-hidden py-16 md:py-28 flex flex-col gap-y-10 transition-colors duration-300">
       <ScrollReveal direction="up" duration="0.8">
         <p className="text-center text-xs sm:text-lg font-semibold tracking-[0.25em] text-slate-400 dark:text-gray-500 uppercase transition-colors duration-300">
           Technologies We Master
@@ -333,8 +334,8 @@ export default function Services() {
         secondaryCTA={{ label: "Contact Us" }}
         visual={
           <div className="p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] dark:shadow-blue-900/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-            <img
-              src={ServiceHero.src}
+            <Image
+              src={ServiceHero}
               alt="IT Services Dashboard"
               className="rounded-xl w-full object-cover aspect-video shadow-sm"
             />

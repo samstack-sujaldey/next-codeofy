@@ -25,7 +25,7 @@ const jobs = [
 
 function Positions() {
   return (
-    <section className="bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 py-12 px-1 transition-colors duration-300">
+    <section className="-mt-px bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 py-12 px-1 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="mb-9 py-2 px-5 text-center my-5">
           <h2 className="text-3xl font-bold text-black dark:text-white">

@@ -20,7 +20,7 @@ function Studycard() {
   ];
 
   return (
-    <section className="text-white py-12 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section className="-mt-px text-white py-12 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="grid gap-10 items-center max-w-7xl mx-auto">
         <ScrollReveal direction="up" duration={0.8}>
           <div className="text-center mb-10 sm:mb-12 md:mb-16">

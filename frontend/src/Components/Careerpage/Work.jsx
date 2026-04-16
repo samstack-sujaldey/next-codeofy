@@ -27,7 +27,7 @@ function Work() {
   ];
 
   return (
-    <section className="text-white py-12 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <section className="-mt-px text-white py-12 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="grid gap-10 items-center">
         <ScrollReveal direction="up" duration={0.8}>
           <div className="text-center mb-10 sm:mb-12 md:mb-16">

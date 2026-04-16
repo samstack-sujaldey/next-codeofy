@@ -63,7 +63,7 @@ const checkpoints = [
 
 function CloudMigration() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
+    <section className="-mt-px py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <ScrollReveal direction="left" duration="0.8">
           <div className="rounded-2xl bg-gray-950 p-6 shadow-2xl font-mono text-sm overflow-hidden border border-gray-800 dark:border-gray-700 transition-all duration-500 hover:shadow-blue-900/20">
@@ -136,7 +136,7 @@ const certs = [
 
 function SecurityCompliance() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
+    <section className="-mt-px py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal direction="up" duration="0.8">
           <div className="bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 sm:p-12 grid md:grid-cols-2 gap-10 items-center border border-gray-100 dark:border-gray-800 shadow-sm transition-all duration-500 hover:shadow-xl dark:hover:border-blue-500/30 hover:-translate-y-1">
@@ -278,6 +278,7 @@ export default function CloudServices() {
       <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <CTASection
           variant="light"
+          bgClassName="bg-transparetn"
           heading="Ready to Scale to New Heights?"
           description="Join 2,500+ companies that trust Codeofy for their mission-critical cloud infrastructure."
           primaryCTA={{ label: "Get Started Today" }}

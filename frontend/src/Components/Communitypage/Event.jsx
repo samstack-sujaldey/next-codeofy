@@ -22,7 +22,7 @@ function Event() {
   ];
 
   return (
-    <section className="py-12 px-1 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section className="-mt-px py-12 px-1 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="mb-9 py-2 px-5 lg:text-left text-center max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-black dark:text-white">

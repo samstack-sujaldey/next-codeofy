@@ -10,7 +10,7 @@ function Btn() {
   };
 
   return (
-    <div className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <div className="-mt-px w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       {/* Button Row */}
       <div className="flex flex-wrap justify-center w-full items-center gap-4 p-6 bg-transparent">
         <button 

@@ -8,9 +8,11 @@ function Read() {
         <div className="mt-0 bg-white dark:bg-gray-800 rounded-2xl p-10 md:p-18 transition-colors duration-300 shadow-md">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <img
+              <Image
                 src="https://infraon.io/blog/wp-content/uploads/2023/06/futuristic-smart-city-with-5g-global-network-technology-min.jpg"
-                className="rounded-lg shadow-sm"
+                width={800}
+                height={500}
+                className="rounded-lg shadow-sm w-full object-cover"
                 alt="Smart city network"
               />
             </div>
@@ -42,4 +44,5 @@ function Read() {
     </div>
   );
 }
+
 export default Read;

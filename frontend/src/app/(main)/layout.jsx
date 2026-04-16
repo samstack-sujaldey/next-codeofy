@@ -8,7 +8,7 @@ export default function MainLayout({ children }) {
     <>
       <Navbar></Navbar>
       <WelcomeBanner />
-      <main className="grow">{children}</main>
+      <main className="grow overflow-x-hidden">{children}</main>
       <Footer />
       <WhatsAppButton />
     </>

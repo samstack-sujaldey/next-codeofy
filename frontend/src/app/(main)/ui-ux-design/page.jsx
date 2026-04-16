@@ -15,7 +15,7 @@ const processTabs = [
 
 function ProcessTabs() {
   return (
-    <section className="bg-blue-400/70 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 py-4 px-4 sticky top-16 z-30 shadow-sm transition-colors duration-300">
+    <section className="-mt-px bg-blue-400/70 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 py-4 px-4 shadow-sm transition-colors duration-300">
       <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-2">
         {processTabs.map((t, i) => (
           <a
@@ -282,7 +282,7 @@ function VisualDesign() {
   return (
     <section
       id="step-3"
-      className="py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 scroll-mt-24 transition-colors duration-300 w-full"
+      className="-mt-px py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 scroll-mt-24 transition-colors duration-300 w-full"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <ScrollReveal direction="up" duration="0.8">
@@ -338,7 +338,7 @@ function UsabilityTesting() {
   return (
     <section
       id="step-4"
-      className="py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 scroll-mt-24 transition-colors duration-300 w-full"
+      className="-mt-px py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 scroll-mt-24 transition-colors duration-300 w-full"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <ScrollReveal direction="up" duration="0.8">
@@ -423,42 +423,43 @@ function UsabilityTesting() {
 export default function UXDesignPage() {
   return (
     <>
-        <HeroSection
-          badge="Expert UX/UI Solutions"
-          badgeVariant="dotted"
-          bgClassName="bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
-          heading={<>Crafting </>}
-          highlightedText="Exceptional Digital Experiences"
-          description="We combine user-centric research with cutting-edge design patterns to build digital products that people love and businesses scale with."
-          primaryCTA={{ label: "Book a Consultation", icon: "→" }}
-          secondaryCTA={{ label: "View Case Studies" }}
-          visual={<DeskVisual />}
-        />
+      <HeroSection
+        badge="Expert UX/UI Solutions"
+        badgeVariant="dotted"
+        bgClassName="bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+        heading={<>Crafting </>}
+        highlightedText="Exceptional Digital Experiences"
+        description="We combine user-centric research with cutting-edge design patterns to build digital products that people love and businesses scale with."
+        primaryCTA={{ label: "Book a Consultation", icon: "→" }}
+        secondaryCTA={{ label: "View Case Studies" }}
+        visual={<DeskVisual />}
+      />
 
       <ProcessTabs />
       <UserResearch />
 
-        <div id="step-2" className="scroll-mt-24">
-          <FeatureGrid
-            title="02. Wireframing & Prototyping"
-            subtitle="We transform concepts into tangible structures. This stage focuses on usability and flow before adding aesthetic layers."
-            items={wireItems}
-            columns={3}
-            className="bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 scroll-mt-24 py-20"
-          />
-        </div>
+      <div id="step-2" className="scroll-mt-24">
+        <FeatureGrid
+          title="02. Wireframing & Prototyping"
+          subtitle="We transform concepts into tangible structures. This stage focuses on usability and flow before adding aesthetic layers."
+          items={wireItems}
+          columns={3}
+          className="bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 scroll-mt-24 py-20"
+        />
+      </div>
 
       <VisualDesign />
       <UsabilityTesting />
 
       <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
-          <CTASection
-            variant="light"
-            heading="Ready to craft your next digital experience?"
-            description="Join 200+ brands that trust Codeofy to design products their users can't stop talking about."
-            primaryCTA={{ label: "Start a Project" }}
-            secondaryCTA={{ label: "View Our Portfolio" }}
-          />
+        <CTASection
+          variant="light"
+          bgClassName="bg-transparent"
+          heading="Ready to craft your next digital experience?"
+          description="Join 200+ brands that trust Codeofy to design products their users can't stop talking about."
+          primaryCTA={{ label: "Start a Project" }}
+          secondaryCTA={{ label: "View Our Portfolio" }}
+        />
       </section>
     </>
   );

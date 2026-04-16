@@ -5,7 +5,7 @@ import ScrollReveal from "../ScrollReveal";
 function Card() {
   const router = useRouter();
   return (
-    <div className="w-full flex justify-center items-center py-10 px-6 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <div className="-mt-px w-full flex justify-center items-center py-10 px-6 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-5xl w-full bg-blue-700 dark:bg-blue-800 rounded-2xl text-center p-12 shadow-xl transition-colors duration-300">
           <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">

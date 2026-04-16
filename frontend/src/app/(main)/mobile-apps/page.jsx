@@ -94,7 +94,7 @@ const perfFeatures = [
 
 function Performance() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
+    <section className="-mt-px py-20 px-4 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 w-full">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <ScrollReveal direction="right" duration={0.8}>
           <div>
@@ -225,7 +225,7 @@ const serviceCards = [
 
 function MobileServices() {
   return (
-    <section className="py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 w-full">
+    <section className="-mt-px py-20 px-4 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300 w-full">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {serviceCards.map((card) => (

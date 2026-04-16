@@ -11,7 +11,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="py-24 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
+      className="-mt-px py-24 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal direction="up" duration={0.8}>

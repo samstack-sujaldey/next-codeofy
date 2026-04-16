@@ -49,7 +49,7 @@ export default function ProcessSteps({
 
   return (
     <section
-      className={`py-20 px-4 transition-colors duration-300 ${bgClassName}`}
+      className={`-mt-px py-20 px-4 transition-colors duration-300 ${bgClassName}`}
     >
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-7xl mx-auto">

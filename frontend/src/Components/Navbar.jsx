@@ -12,6 +12,7 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image"; // <-- Added Next.js Image import
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ThemeContext } from "./ThemeContext";
@@ -65,16 +66,18 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-900 text-black dark:text-white px-6 py-4 top-0 z-50 shadow-sm transition-colors duration-300 relative">
+    <nav className="bg-white dark:bg-gray-900 text-black dark:text-white px-6 py-4 top-0 z-50 transition-colors duration-300 sticky">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => router.push("/")}
         >
           <div className="w-12 h-12 relative flex items-center justify-center overflow-hidden shrink-0">
-            <img
-              src={logo.src}
+            <Image
+              src={logo}
               alt="Codeofy Logo"
+              width={144}
+              height={144}
               className="absolute w-[300%] h-[300%] object-contain max-w-none mt-2"
             />
           </div>
@@ -253,7 +256,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-xl border-t border-gray-100 dark:border-gray-800 px-6 py-4 space-y-4 transition-colors duration-300">
+        <div className="lg:hidden absolute top-full left-0 w-full max-h-[calc(100vh-80px)] overflow-y-auto pb-10 bg-white dark:bg-gray-900 shadow-xl border-t border-gray-100 dark:border-gray-800 px-6 py-4 space-y-2 transition-colors duration-300">
           {navLinks.map((link) => {
             const isActive = pathname === link.path;
             if (link.name === "Services") {

@@ -26,7 +26,7 @@ function Hiring() {
 
   return (
     <>
-      <section className="bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 py-15 transition-colors duration-300">
+      <section className="-mt-px bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 py-15 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal direction="up" duration={0.8}>
             <h2 className="text-3xl font-bold text-black dark:text-white">

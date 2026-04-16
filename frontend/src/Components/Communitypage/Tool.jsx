@@ -20,7 +20,7 @@ function Tool() {
   ];
 
   return (
-    <section className="w-full bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section className="-mt-px w-full bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <ScrollReveal direction="up">
         {/* RESPONSIVE FIX: Swapped 'flex' for a responsive grid with a max-width! */}
         <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">

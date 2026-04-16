@@ -7,7 +7,7 @@ export default function CommunitySection() {
   return (
     <section
       id="community"
-      className="py-24 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 text-center transition-colors duration-300"
+      className="-mt-px py-24 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 text-center transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal direction="up" duration={0.8}>

@@ -5,7 +5,7 @@ import ScrollReveal from "../ScrollReveal";
 function Blogstart() {
   const router = useRouter();
   return (
-    <div className="px-6 py-10 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="-mt-px px-6 py-10 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <ScrollReveal direction="up" duration={0.8}>
         <div className="max-w-6xl mx-auto mt-12 bg-linear-to-r from-black to-gray-900 text-white rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between">
           <div>

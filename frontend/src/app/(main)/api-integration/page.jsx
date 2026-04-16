@@ -168,6 +168,7 @@ export default function APIIntegrationsPage() {
       <section className="w-full bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <CTASection
           variant="light"
+          bgClassName="bg-transparent"
           heading="Ready to scale your connectivity?"
           description="Join hundreds of companies that trust Codeofy for their mission-critical API infrastructure."
           primaryCTA={{ label: "Start Project Now" }}

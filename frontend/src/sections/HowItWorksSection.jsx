@@ -8,7 +8,7 @@ export default function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="relative py-28 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 overflow-hidden transition-colors duration-300"
+      className="-mt-px relative py-28 bg-linear-to-b from-white to-blue-400/70 dark:from-gray-900 dark:to-gray-800 overflow-hidden transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         <ScrollReveal direction="up" duration={0.8}>

@@ -1,15 +1,15 @@
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "../ScrollReveal";
-import teamMeeting from "@/assets/teamMeeting.jpeg"
+import teamMeeting from "@/assets/teamMeeting.jpeg";
 
 function Workcard() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <img
-            src={teamMeeting.src}
+          <Image
+            src={teamMeeting}
             alt="team meeting"
             className="rounded-xl shadow-lg hover:shadow-blue-400 transform transition-all duration-500 ease-in-out hover:scale-105"
           />
@@ -56,4 +56,5 @@ function Workcard() {
     </div>
   );
 }
+
 export default Workcard;

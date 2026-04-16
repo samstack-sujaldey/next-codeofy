@@ -3,7 +3,7 @@ import ScrollReveal from "../ScrollReveal";
 
 function Blogmsg() {
   return (
-    <section className="py-8 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <section className="-mt-px py-8 bg-linear-to-b from-blue-400/70 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-10 text-center">
         <ScrollReveal direction="up" duration={0.8}>
           <div className="mt-0 bg-linear-to-r from-blue-400 to-indigo-200 dark:from-blue-900 dark:to-indigo-900 text-white rounded-4xl p-18 transition-colors duration-300">
