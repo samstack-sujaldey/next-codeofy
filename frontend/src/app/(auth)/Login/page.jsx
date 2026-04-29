@@ -145,7 +145,7 @@ function Login() {
             <div className="absolute left-0 top-1/2 w-full h-px bg-gray-300 dark:bg-gray-700 z-0"></div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid gap-4"> 
             {icon.map((item, index) => {
               return (
                 <button
