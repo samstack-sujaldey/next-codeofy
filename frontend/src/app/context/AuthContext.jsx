@@ -6,42 +6,59 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [bannerMessage, setBannerMessage] = useState("");
-
-  // Add a loading state so the app doesn't flash the login screen while checking!
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkLoggedInUser = async () => {
       try {
-        // Call your backend's checkAuth route
-        const res = await fetch("http://localhost:5000/api/auth/check", {
+        const res = await fetch("http://localhost:5000/api/auth/me", {
           method: "GET",
-          credentials: "include", // THIS IS CRITICAL: It tells the browser to send the httpOnly cookie!
+          credentials: "include",
         });
 
-        const text = await res.text(); // Read it as text first to see the HTML
+        const text = await res.text();
         const data = JSON.parse(text);
 
-        if (res.ok && data.isAuthenticated) {
-          // If the cookie is valid, log the user back in automatically!
+        if (res.ok && data.success) {
           setCurrentUser(data.user);
+
+          // Handle the one-time OAuth Banner
+          if (sessionStorage.getItem("justLoggedIn") === "true") {
+            // Check how old the account is (in milliseconds)
+            const accountCreationTime = new Date(data.user.createdAt).getTime();
+            const rightNow = new Date().getTime();
+            const timeSinceCreation = rightNow - accountCreationTime;
+
+            // If the account is less than 60 seconds old, it's a new signup!
+            if (timeSinceCreation < 60000) {
+              setBannerMessage(
+                "Account created successfully! Ready to build something amazing,",
+              );
+            } else {
+              setBannerMessage("You have successfully logged in.");
+            }
+
+            // Clear the flag so it doesn't show on normal page refreshes
+            sessionStorage.removeItem("justLoggedIn");
+
+            // Auto-hide the banner after 5 seconds
+            setTimeout(() => setBannerMessage(""), 5000);
+          }
         }
       } catch (err) {
         console.error("Failed to check authentication status", err);
       } finally {
-        // Whether it succeeded or failed, we are done loading
         setIsLoading(false);
       }
     };
 
     checkLoggedInUser();
-  }, []); // The empty array ensures this only runs ONCE when the app first loads
+  }, []);
 
   return (
     <AuthContext.Provider
       value={{ currentUser, setCurrentUser, bannerMessage, setBannerMessage }}
     >
-      {/* Wait until the check is completely finished before showing the app */}
       {!isLoading && children}
     </AuthContext.Provider>
   );

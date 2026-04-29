@@ -41,7 +41,6 @@ function Signin() {
         setBannerMessage(
           "Account created successfully! Ready to build something amazing,",
         );
-        console.log(data);
         router.push("/");
       } else {
         if (data.errors) {

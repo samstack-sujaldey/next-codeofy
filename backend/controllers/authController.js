@@ -7,9 +7,13 @@ export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
+    // 1. THIS is where we intercept the duplicate email!
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({
+        success: false,
+        message: "This email is already registered. Please log in instead.",
+      });
     }
 
     const hashed = await bcrypt.hash(password, 10);
@@ -20,22 +24,42 @@ export const register = async (req, res) => {
       password: hashed,
     });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "secret123", { expiresIn: "1d" });
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET || "secret123",
+      { expiresIn: "1d" },
+    );
 
     res.cookie("token", token, {
-      httpOnly: true,     // Prevents JavaScript from reading the cookie (Secure!)
-      secure: false,      // Set to true in production (HTTPS)
-      sameSite: "lax",    // Helps prevent CSRF attacks
-      maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax",
+      maxAge: 24 * 60 * 60 * 1000,
     });
 
     const { password: _, ...userData } = user._doc;
-    res.status(201).json({ message: "Registered and logged in!", user: userData });
+    res
+      .status(201)
+      .json({ message: "Registered and logged in!", user: userData });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    // 2. We keep this here just as a failsafe, in case two people
+    // try to register the exact same email at the exact same millisecond!
+    if (err.code === 11000) {
+      if (err.keyPattern && err.keyPattern.email) {
+        return res.status(400).json({
+          success: false,
+          message: "This email is already registered. Please log in instead.",
+        });
+      }
+    }
+
+    console.error("Registration Error:", err);
+    res.status(500).json({
+      success: false,
+      message: "An error occurred during registration. Please try again.",
+    });
   }
 };
-
 
 // CHECK AUTH - Used to keep the user logged in on page refresh
 export const checkAuth = async (req, res) => {
@@ -43,19 +67,25 @@ export const checkAuth = async (req, res) => {
     const token = req.cookies.token;
 
     if (!token) {
-      return res.status(401).json({ isAuthenticated: false, message: "No token found" });
+      return res
+        .status(401)
+        .json({ isAuthenticated: false, message: "No token found" });
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET || "secret123");
     const user = await User.findById(decoded.id).select("-password");
 
     if (!user) {
-      return res.status(404).json({ isAuthenticated: false, message: "User not found" });
+      return res
+        .status(404)
+        .json({ isAuthenticated: false, message: "User not found" });
     }
 
     res.json({ isAuthenticated: true, user });
   } catch (err) {
-    res.status(401).json({ isAuthenticated: false, message: "Invalid or expired token" });
+    res
+      .status(401)
+      .json({ isAuthenticated: false, message: "Invalid or expired token" });
   }
 };
 
@@ -80,15 +110,20 @@ export const login = async (req, res) => {
     if (!user) return res.status(400).json({ message: "User not found" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+    if (!isMatch)
+      return res.status(400).json({ message: "Invalid credentials" });
 
     const expiresInDays = rememberMe ? 7 : 1;
     const expiresInString = `${expiresInDays}d`;
     const maxAgeMs = expiresInDays * 24 * 60 * 60 * 1000;
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "secret123", {
-      expiresIn: expiresInString,
-    });
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET || "secret123",
+      {
+        expiresIn: expiresInString,
+      },
+    );
 
     // Set the cookie exactly like in Register
     res.cookie("token", token, {

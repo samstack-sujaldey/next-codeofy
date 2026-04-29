@@ -13,6 +13,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'kce.ac.in' },
       { protocol: 'https', hostname: 'cdn-icons-png.flaticon.com' },
       { protocol: 'https', hostname: 't3.ftcdn.net' },
+      { protocol: 'https', hostname: 'about.twitter.com' },
     ],
   }
 };

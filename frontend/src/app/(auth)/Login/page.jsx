@@ -2,12 +2,11 @@
 import { useState } from "react";
 import { Eye } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Image from "next/image"; // <-- Added Next.js Image import
+import Image from "next/image";
 import img from "@/assets/img.webp";
 import { useAuth } from "@/app/context/AuthContext";
 
 function Login() {
-  // STATE
   const [rememberMe, setRememberMe] = useState(false);
   const [showpassword, setshowpassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -20,40 +19,42 @@ function Login() {
     {
       logo: "https://img.freepik.com/premium-vector/google-logo-icon-transparent-background_1273375-1570.jpg?semt=ais_rp_progressive&w=740&q=80",
       text: "Google",
+      provider: "google",
     },
     {
-      logo: "https://img.freepik.com/premium-vector/round-facebook-logo-isolated-white-background_469489-897.jpg?semt=ais_hybrid&w=740&q=80",
-      text: "Facebook",
+      logo: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+      text: "GitHub",
+      provider: "github",
+    },
+    {
+      logo: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+      text: "LinkedIn",
+      provider: "linkedin",
+    },
+    {
+      logo: "https://about.twitter.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png",
+      text: "X",
+      provider: "twitter",
     },
   ];
 
+  // Manual Email/Password Login
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({
-          email,
-          password,
-          rememberMe,
-        }),
+        body: JSON.stringify({ email, password, rememberMe }),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        // This will now work perfectly across your entire app!
         setCurrentUser(data.user);
-        setBannerMessage(
-          "You have successfully logged in. Ready to pick up where you left off,",
-        );
+        setBannerMessage("You have successfully logged in.");
         router.push("/");
-        console.log(data);
       } else {
         alert(data.message || "Login failed");
       }
@@ -62,13 +63,18 @@ function Login() {
     }
   };
 
+  // OAuth Login (Redirects to backend)
+  const handleOAuthLogin = (provider) => {
+    // Navigates away from React to let Express/Passport handle the redirect to Google/FB
+    sessionStorage.setItem("justLoggedIn", "true");
+    window.open(`http://localhost:5000/api/auth/${provider}`, "_self");
+  };
+
   return (
     <div className="flex min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <div
         className="hidden md:flex w-1/2 bg-cover bg-center relative rounded-r-2xl"
-        style={{
-          backgroundImage: `url(${img.src})`,
-        }}
+        style={{ backgroundImage: `url(${img.src})` }}
       ></div>
 
       <div className="flex w-full md:w-1/2 items-center justify-center bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
@@ -76,7 +82,6 @@ function Login() {
           <h1 className="text-3xl text-black dark:text-white font-bold uppercase text-center">
             Welcome to Codeofy
           </h1>
-
           <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6 capitalize text-center">
             Put your details to Sign In
           </p>
@@ -86,7 +91,7 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Email"
-              className="w-full p-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-lg mb-4 transition-colors"
+              className="w-full p-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-lg mb-4"
               required
             />
 
@@ -95,13 +100,13 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 type={showpassword ? "text" : "password"}
                 placeholder="Password"
-                className="w-full p-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-lg mb-4 transition-colors"
+                className="w-full p-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-lg mb-4"
                 required
               />
               <button
                 type="button"
                 onClick={() => setshowpassword(!showpassword)}
-                className="absolute right-3 top-3 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+                className="absolute right-3 top-3 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
               >
                 {showpassword ? "Hide" : <Eye size={21} />}
               </button>
@@ -117,7 +122,6 @@ function Login() {
                 />
                 Remember me
               </label>
-
               <button
                 type="button"
                 className="text-sm text-blue-700 dark:text-blue-400 hover:underline"
@@ -135,25 +139,26 @@ function Login() {
           </form>
 
           <div className="text-center text-gray-400 dark:text-gray-500 my-6 capitalize relative">
-            <span className="bg-gray-100 dark:bg-gray-900 px-3 relative z-10 transition-colors">
+            <span className="bg-gray-100 dark:bg-gray-900 px-3 relative z-10">
               or continue with
             </span>
-            <div className="absolute left-0 top-1/2 w-full h-px bg-gray-300 dark:bg-gray-700 z-0 transition-colors"></div>
+            <div className="absolute left-0 top-1/2 w-full h-px bg-gray-300 dark:bg-gray-700 z-0"></div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {icon.map((item, index) => {
               return (
                 <button
                   key={index}
                   type="button"
-                  className="w-1/2 border border-gray-300 dark:border-gray-700 dark:text-gray-200 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300"
+                  onClick={() => handleOAuthLogin(item.provider)}
+                  className="border border-gray-300 dark:border-gray-700 dark:text-gray-200 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300"
                 >
                   <Image
                     src={item.logo}
                     width={20}
                     height={20}
-                    className="w-5 h-5"
+                    className="w-5 h-5 object-contain"
                     alt={`${item.text} logo`}
                   />
                   <span className="capitalize">{item.text}</span>
